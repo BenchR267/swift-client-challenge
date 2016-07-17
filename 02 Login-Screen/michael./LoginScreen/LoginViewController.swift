@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButon: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var combinationLabel: UILabel!
-    @IBOutlet weak var openerConstraint: NSLayoutConstraint! { didSet { openerConstraint.constant = 0 } }
+    @IBOutlet weak var openerConstraint: NSLayoutConstraint!
     @IBOutlet weak var splitContstaint: NSLayoutConstraint!
     @IBOutlet weak var safeWheel: SafeWheelView!
 
@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private var hideObserver: NSObjectProtocol?
 
     var accessGranted: Bool = false
+    weak var delegate: LoginViewControllerDelegate?
 
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -31,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    // MARK: - Keyboard Handling
+    // MARK: - View Lifecycle
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -92,15 +93,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         guard let email = emailField.text else { return }
         guard let password = passwordField.text else { return }
 
-        if email == "login@example.de" && password == "Geheim" {
-            accessGranted = true
-        }
-    }
-
-
-    @IBAction func cancel() {
-        hideKeyboard()
-        self.performSegueWithIdentifier("Cancel", sender: self)
+        accessGranted = delegate?.checkAccessForEmail(email, password: password) ?? false
     }
 
 
@@ -110,13 +103,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
 
+    // MARK: - Actions
+
+    @IBAction func cancel() {
+        hideKeyboard()
+        self.performSegueWithIdentifier("Cancel", sender: self)
+    }
+
+
     @IBAction func login() {
         hideKeyboard()
 
         let combination = calculateCombination()
         combinationLabel.text = "\(combination[0])L - \(abs(combination[1]))R - \(combination[2])L - \(abs(combination[3]))R"
 
-        // Create Operations with dependencies
+        // Create operations with dependencies
         let startOperation = StartOperation(controller: self)
         let rotationOperation = RotationOperation(view: safeWheel, steps: combination)
         let checkOperation = NSBlockOperation { self.checkLogin() }
@@ -133,9 +134,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let queue = NSOperationQueue()
         queue.addOperation(checkOperation)
     }
+}
 
 
-    // MARK: - Animations
+// MARK: - Animations
+
+extension LoginViewController {
+
+    var inputEnabled: Bool {
+        get {
+            return emailField.enabled
+        }
+        set {
+            emailField.enabled = newValue
+            passwordField.enabled = newValue
+            loginButon.enabled = newValue
+            cancelButton.enabled = newValue
+        }
+    }
 
      func hideSafeWheel() {
         safeWheel.resetWheel()
@@ -149,20 +165,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }}, completion: nil)
 
-        // Enable input
-        emailField.enabled = true
-        passwordField.enabled = true
-        loginButon.enabled = true
-        cancelButton.enabled = true
+        inputEnabled = true
     }
 
 
     func showSafeWheel(full: Bool = false, completion: ((Bool) -> Void)?) {
-        // Disable input
-        emailField.enabled = false
-        passwordField.enabled = false
-        loginButon.enabled = false
-        cancelButton.enabled = false
+        inputEnabled = false
 
         // Show the safe wheel
         UIView.animateWithDuration(0.25, delay: 0.3, options: .CurveEaseInOut, animations: {
@@ -170,9 +178,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
             }, completion: completion)
     }
+}
 
 
-    // MARK: - UITextFieldDelegate Protocoll
+// MARK: - UITextFieldDelegate Protocol
+
+extension LoginViewController {
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == emailField {
@@ -181,7 +192,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         else {
             emailField.becomeFirstResponder()
         }
-
+        
         return true
     }
+}
+
+
+// MARK: - LoginViewControllerDelegate Protocol
+
+@objc protocol LoginViewControllerDelegate {
+    func checkAccessForEmail(email: String, password: String) -> Bool
+}
+
+
+// MARK: - UnwindLogin Protocol
+
+protocol UnwindLogin {
+    func unwindLoginCanceled(sender: UIStoryboardSegue)
+    func unwindLoginSuccess(sender: UIStoryboardSegue)
 }

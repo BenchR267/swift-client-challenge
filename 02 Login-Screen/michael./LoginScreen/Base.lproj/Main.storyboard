@@ -65,7 +65,7 @@ Demo</string>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -91,17 +91,17 @@ Demo</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXq-v4-RYY" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-sv-HLg" userLabel="Line View">
-                                        <rect key="frame" x="0.0" y="139" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="299" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="UXk-dE-UEb"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TeW-AS-XDE" userLabel="Email Text Field">
-                                        <rect key="frame" x="200" y="101" width="200" height="30"/>
+                                        <rect key="frame" x="200" y="261" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.90422453703703709" green="0.90422453703703709" blue="0.90422453703703709" alpha="0.10168177480916031" colorSpace="deviceRGB"/>
                                         <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -115,7 +115,7 @@ Demo</string>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIU-X8-Fze">
-                                        <rect key="frame" x="276" y="71" width="47" height="21.5"/>
+                                        <rect key="frame" x="276" y="231" width="47" height="21.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -133,7 +133,7 @@ Demo</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daw-d8-uec" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="460" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlL-b6-pcC">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
@@ -210,7 +210,7 @@ Demo</string>
                             <constraint firstItem="EXq-v4-RYY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z5Q-PG-U1r"/>
                             <constraint firstItem="Daw-d8-uec" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qNG-Gq-qj1"/>
                             <constraint firstAttribute="trailing" secondItem="EXq-v4-RYY" secondAttribute="trailing" id="veQ-ix-J64"/>
-                            <constraint firstItem="Daw-d8-uec" firstAttribute="top" secondItem="EXq-v4-RYY" secondAttribute="bottom" constant="320" id="yqK-HA-IfK"/>
+                            <constraint firstItem="Daw-d8-uec" firstAttribute="top" secondItem="EXq-v4-RYY" secondAttribute="bottom" id="yqK-HA-IfK"/>
                         </constraints>
                     </view>
                     <connections>

@@ -26,7 +26,8 @@ class StartOperation: NSOperation {
 
 
     override func main() {
-        if cancelled {
+        if  cancelled {
+            animationFinished = true
             return
         }
 

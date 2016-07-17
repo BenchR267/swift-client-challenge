@@ -32,6 +32,7 @@ class RotationOperation: NSOperation {
 
     override func main() {
         if cancelled {
+            animationFinished = true
             return
         }
 
