@@ -5,3 +5,4 @@ Jeder, der mitmachen will, baut eine App, die die Repositorys eines Github-Nutze
 Dafür haben alle Teilnehmer 2 Wochen Zeit.
 Nach zwei Wochen schauen wir unsere Ergebnisse an um voneinander zu lernen.
 Keine 3rd-Party-Libs.
+ 
