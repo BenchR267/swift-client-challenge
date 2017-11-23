@@ -5,4 +5,4 @@
 | VIPER | @schumi |
 | MVVM | @bilalreffas |
 | ELM | @ben |
-| MVC |   |
+| MVC | @marius_landwehr |
