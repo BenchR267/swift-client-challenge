@@ -8,6 +8,8 @@ Die App ermöglicht es für einen festgelegten Nutzernamen die App zu nutzen und
 ### Repository List
 Lädt die Daten der Repositories von einem Nutzer und zeigt diese in einer TableView an.
 
+![RepositoryList](screenshots/List.png)
+
 **API Call**
 ```swift
 let github = GithubAPIService()
@@ -19,6 +21,8 @@ github.responseDecodable(urlConvertible: endpoint) { (repos: Repositories?, resp
 
 ### Repository Details
 Lädt die Detaildaten, die Issues und die Pull-Requests des ausgewählten Repository.
+
+![RepositoryDetails](screenshots/Detail.png)
 
 **API Calls**
 ```swift
