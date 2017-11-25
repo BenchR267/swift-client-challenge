@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IssueCollectionViewCell" id="gTV-IL-0wX" customClass="IssueCollectionViewCell" customModule="Architekturen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="187" height="141"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="187" height="141"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="open" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-S0-jK9">
+                        <rect key="frame" x="4" y="122.5" width="28.5" height="14.5"/>
+                        <color key="backgroundColor" cyan="0.21202566964285716" magenta="0.0" yellow="0.4390345982142857" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-hV-Gsl">
+                        <rect key="frame" x="8" y="8" width="171" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0V-gl-8Od">
+                        <rect key="frame" x="8" y="29" width="171" height="85.5"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94D-yp-2Bi">
+                        <rect key="frame" x="100.5" y="122.5" width="78.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.93007935801520947" green="0.93371009704115693" blue="0.95033767223358157" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Ydl-S0-jK9" firstAttribute="top" secondItem="n0V-gl-8Od" secondAttribute="bottom" constant="8" id="2eJ-Zk-0e5"/>
+                <constraint firstAttribute="bottom" secondItem="94D-yp-2Bi" secondAttribute="bottom" constant="4" id="2kT-6C-jiG"/>
+                <constraint firstItem="n0V-gl-8Od" firstAttribute="leading" secondItem="GFd-hV-Gsl" secondAttribute="leading" id="4yi-p3-JgP"/>
+                <constraint firstAttribute="trailing" secondItem="94D-yp-2Bi" secondAttribute="trailing" constant="8" id="FNX-NK-F9L"/>
+                <constraint firstAttribute="bottom" secondItem="Ydl-S0-jK9" secondAttribute="bottom" constant="4" id="J2y-8k-Dwh"/>
+                <constraint firstItem="GFd-hV-Gsl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="a9E-32-w4m"/>
+                <constraint firstItem="Ydl-S0-jK9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="aNN-6W-CNV"/>
+                <constraint firstItem="n0V-gl-8Od" firstAttribute="trailing" secondItem="GFd-hV-Gsl" secondAttribute="trailing" id="e6n-4h-KB1"/>
+                <constraint firstAttribute="trailing" secondItem="GFd-hV-Gsl" secondAttribute="trailing" constant="8" id="gzO-nF-Kee"/>
+                <constraint firstItem="GFd-hV-Gsl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="qJ2-hR-0gm"/>
+                <constraint firstItem="94D-yp-2Bi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ydl-S0-jK9" secondAttribute="trailing" constant="16" id="s9B-FY-DSi"/>
+                <constraint firstItem="n0V-gl-8Od" firstAttribute="firstBaseline" secondItem="GFd-hV-Gsl" secondAttribute="baseline" constant="16" symbolType="layoutAnchor" id="sSa-Hw-5Qq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="187" height="141"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="commentLabel" destination="94D-yp-2Bi" id="LVy-14-gM7"/>
+                <outlet property="descriptionLabel" destination="n0V-gl-8Od" id="zHJ-o9-sxD"/>
+                <outlet property="stateLabel" destination="Ydl-S0-jK9" id="fSy-6Q-J3L"/>
+            </connections>
+            <point key="canvasLocation" x="-180" y="-53"/>
+        </collectionViewCell>
+    </objects>
+</document>
